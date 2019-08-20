@@ -10,7 +10,7 @@ int length(char str[]) {
 }
 
 int main() {
-    char str[] = {'1', '2', '3', '4'};
+    char str[] = {'1', '2', '3', '4', '\0'};
     char str2[] = "sadsafas";   //IDK why its getting concatenated lol
     cout<<length(str)<<endl;
     // cout<<length(str2)<<endl;
