@@ -58,8 +58,9 @@ void merge(int arr[], int l, int m, int r)
    sub-array of arr to be sorted */
 void mergeSort(int arr[], int l, int r) 
 { 
-    if (l < r) 
-    { 
+    if (r >= l) {
+        return;
+    } else { 
         // Same as (l+r)/2, but avoids overflow for 
         // large l and h 
         int m = l+(r-l)/2; 
