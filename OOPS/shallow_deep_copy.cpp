@@ -8,6 +8,23 @@ class Student {
 
     public:
 
+    Student() {
+        this -> name = NULL;
+        this -> age = 0; 
+    }
+
+    Student(Student &s) {
+        this -> age = s.age;
+        // deep copy name
+        this -> name = new char[strlen(s.name) + 1];
+        strcpy(this -> name, name);
+    }
+
+    ~Student() {
+        this -> name = NULL;
+        delete this -> name;
+    }
+
     int getAge() {
         return this -> age;
     }
