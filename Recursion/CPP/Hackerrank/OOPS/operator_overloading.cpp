@@ -18,26 +18,26 @@ class Fraction {
 
     Fraction operator+(Fraction const &f) {
         int lcm = denominator * f.denominator;
-        Fraction fnew =  Fraction(numerator*f.denominator + f.numerator*denominator, lcm);
+        Fraction fnew(numerator*f.denominator + f.numerator*denominator, lcm);
         fnew.simplify();
         return fnew; 
     }
 
     Fraction operator-(Fraction const &f) {
         int lcm = denominator * f.denominator;
-        Fraction fnew =  Fraction(numerator*f.denominator - f.numerator*denominator, lcm);
+        Fraction fnew(numerator*f.denominator - f.numerator*denominator, lcm);
         fnew.simplify();
         return fnew; 
     }
 
     Fraction operator*(Fraction const &f) {
-        Fraction fnew = Fraction(numerator*f.numerator, denominator*f.denominator);
+        Fraction fnew(numerator*f.numerator, denominator*f.denominator);
         fnew.simplify();
         return fnew; 
     }
 
     Fraction operator/(Fraction const &f) {
-        Fraction fnew = Fraction(numerator*f.denominator, denominator*f.numerator);
+        Fraction fnew(numerator*f.denominator, denominator*f.numerator);
         fnew.simplify();
         return fnew; 
     }
