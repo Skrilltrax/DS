@@ -48,6 +48,17 @@ class Fraction {
         return false;
     }
 
+    //Pre-Increment
+    /*
+        Here we are returning by reference. Returning by reference helps it as now the function can also
+        be used as an lvalue. Noice.
+     */
+    Fraction& operator++() {
+        numerator += denominator;
+        simplify();
+        return *this;
+    }
+
     void simplify() {
         int m = min(numerator, denominator);
         for (int i = 2; i <= m; i++) {
@@ -75,4 +86,6 @@ int main() {
         Fraction f3 = f1 + f2;
         f3.display();
     }
+    ++(++f1);
+    f1.display();
 }
