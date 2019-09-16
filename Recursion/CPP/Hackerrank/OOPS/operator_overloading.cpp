@@ -59,6 +59,23 @@ class Fraction {
         return *this;
     }
 
+    //Post increment
+    //Nesting of PI operator is not allowed
+    Fraction operator++(int) {
+        Fraction fnew(numerator, denominator);
+        numerator += denominator;
+        simplify();
+        return fnew;
+    }
+
+    Fraction& operator+=(Fraction const &f) {
+        int lcm = denominator * f.denominator;
+        numerator = numerator*f.denominator + f.numerator*denominator;
+        denominator =  lcm;
+        simplify();
+        return *this;          
+    }
+
     void simplify() {
         int m = min(numerator, denominator);
         for (int i = 2; i <= m; i++) {
