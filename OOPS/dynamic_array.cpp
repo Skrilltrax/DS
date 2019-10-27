@@ -20,6 +20,30 @@ class DynamicArray {
         data = new int[capacity];
     }
 
+    DynamicArray(DynamicArray const &d) {
+        // data = d.data;       Shallow Copy
+
+        // Deep Copy
+        data = new int[d.capacity];
+        for (int i = 0; i < d.nextIndex; i++) {
+            data[i] = d.data[i];
+        }
+        capacity = d.capacity;
+        nextIndex = d.nextIndex;
+    }
+
+    void operator=(DynamicArray const &d) {
+        // data = d.data;       Shallow Copy
+        
+        // Deep Copy
+        data = new int[d.capacity];
+        for (int i = 0; i < d.nextIndex; i++) {
+            data[i] = d.data[i];
+        }
+        capacity = d.capacity;
+        nextIndex = d.nextIndex;
+    }
+
     void add(int element) {
         if (nextIndex == capacity) {
             int *newData = new int[capacity * 2];
@@ -41,6 +65,23 @@ class DynamicArray {
             return data[i];
         }
         return -1;
+    }
+
+    void add(int i, int element) {
+        if (i < nextIndex) {
+            data[i] = element;
+        } else if (i == nextIndex) {
+            add(element);
+        } else {
+            return;
+        }
+    }
+
+    void print() {
+        for (int i = 0; i < nextIndex; i++) {
+            cout << data[i] << " ";
+        }
+        cout << endl;
     }
 };
 
