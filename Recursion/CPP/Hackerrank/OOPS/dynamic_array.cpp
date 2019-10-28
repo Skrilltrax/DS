@@ -51,7 +51,7 @@ class DynamicArray {
             for (int i = 0; i < capacity; i++) {
                 newData[i] = data[i];
             }
-            delete [] data;
+            delete[] data;
             data = newData;
             data[nextIndex] = element;
             nextIndex++;
