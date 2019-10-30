@@ -14,6 +14,7 @@ class Polynomial {
     }
 
     Polynomial(Polynomial const &p) {
+        this -> degreeCoeff = new int[p.capacity];
         for (int i = 0; i < p.capacity; i++) {
             this -> degreeCoeff[i] = p.degreeCoeff[i];
         }
