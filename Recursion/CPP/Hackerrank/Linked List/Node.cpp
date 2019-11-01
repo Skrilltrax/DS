@@ -7,13 +7,14 @@ class SingleLLHelper {
         Node* next;
         Node(int data) {
             this -> data = data;
-            next = NULL;
+            this -> next = NULL;
         }
-    } *head;
+    } *head, *tail;
 
     public:
     SingleLLHelper() {
         head = NULL;
+        tail = NULL;
     }
     void printLL() {
         Node *ptr = head;
@@ -28,6 +29,9 @@ class SingleLLHelper {
         }
     }
 
+    /*
+    * Add node in n^2 time (takes n time to input a single node)
+    */
     void addNode(int data) {
         if (head == NULL) {
             head = new Node(data);
@@ -38,6 +42,45 @@ class SingleLLHelper {
             ptr = ptr -> next;
         }
         ptr -> next = new Node(data);
+    }
+
+    void addNodeEnd(int data) {
+        if (head == NULL) {
+            head = new Node(data);
+            tail = head;
+            return;
+        }
+        tail -> next = new Node(data);
+        tail = tail -> next;
+    }
+
+
+    int addNodeAtPosition(int pos, int data) {
+        int currentPos = 0;
+        if (head == NULL) {
+            head = new Node(data);
+            tail = head;
+            return data;
+        }
+        Node *ptr = head;
+        while (currentPos < pos - 1) {
+            if (ptr == NULL) {
+                return -1;
+            }
+            ptr = ptr -> next;
+            currentPos++;
+        }
+        Node *temp = new Node(data);
+        if (pos == 0) {
+            temp -> next = head;
+            head = temp;
+        } else {
+            temp -> next = ptr -> next;
+            ptr -> next = temp;
+        }
+        temp = NULL;
+        delete temp; 
+        return data;
     }
 
     int removeNode() {
