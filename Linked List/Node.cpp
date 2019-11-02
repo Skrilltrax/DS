@@ -16,6 +16,15 @@ class SingleLLHelper {
         head = NULL;
         tail = NULL;
     }
+
+    Node* returnHead() {
+        return head;
+    }
+    
+    Node* returnTail() {
+        return tail;
+    }
+
     void printLL() {
         Node *ptr = head;
         while (ptr != NULL)
@@ -83,6 +92,31 @@ class SingleLLHelper {
         return data;
     }
 
+// TODO: Add recursive implementations
+/*    int addNodeAtPositionRecusrive(Node* ptr, int position, int data) {
+        int newPos = position - 1;
+        if (ptr == NULL) {
+            if (newPos == -1) {
+                ptr = new Node(data);
+            } else {
+                return -1;
+            }
+        } else {
+            if (ptr->next == NULL && newPos == -1) {
+                ptr -> next = new Node(data);
+                return data;
+            } else if (ptr -> next != NULL && newPos == -1) {
+                Node *temp = new Node(data);
+                temp -> next = ptr -> next;
+                ptr -> next = temp;
+                temp = NULL;
+                delete temp;
+            }
+        }
+        return addNodeAtPositionRecusrive(ptr -> next, newPos, data);
+    }
+*/
+
     int removeNode() {
         if (head == NULL) {
             return -1;
@@ -96,5 +130,34 @@ class SingleLLHelper {
             ptr -> next = NULL;
             return temp;
         }
+    }
+
+    int removeNodeAtPosition(int pos) {
+        int currentPos = 0;
+        if (head == NULL) {
+            return -1;
+        }
+        Node *ptr = head;
+        while (currentPos < pos - 1)
+        {
+            if (ptr -> next == NULL) {
+                return -1;
+            }
+            ptr = ptr -> next;
+            currentPos++;
+        }
+        int num = -1;
+        if (pos == 0) {
+            Node *tmp = head;
+            head = head -> next;
+            num = tmp -> data;
+            delete tmp;            
+        } else {
+            Node *tmp = ptr -> next;
+            ptr -> next = tmp -> next;
+            num = tmp -> data;
+            delete tmp;
+        }
+        return num;
     }
 };
