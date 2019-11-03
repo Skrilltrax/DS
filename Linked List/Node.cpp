@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 class SingleLLHelper {
+    public:
     class Node {
         public:
         int data;
@@ -11,18 +12,9 @@ class SingleLLHelper {
         }
     } *head, *tail;
 
-    public:
     SingleLLHelper() {
         head = NULL;
         tail = NULL;
-    }
-
-    Node* returnHead() {
-        return head;
-    }
-    
-    Node* returnTail() {
-        return tail;
     }
 
     void printLL() {

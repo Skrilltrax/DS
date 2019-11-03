@@ -24,9 +24,9 @@ void testLL() {
     helper.printLL();
     cout << "Removed : " << helper.removeNodeAtPosition(100) << endl;
     helper.printLL();
-    cout << "Added : " << helper.addNodeAtPositionRecusrive(helper.returnHead(), 0, 10) << endl;
-    cout << "Added : " << helper.addNodeAtPositionRecusrive(helper.returnHead(), 0, 0) << endl;
-    helper.printLL();
+    // cout << "Added : " << helper.addNodeAtPositionRecusrive(helper.head, 0, 10) << endl;
+    // cout << "Added : " << helper.addNodeAtPositionRecusrive(helper.head, 0, 0) << endl;
+    // helper.printLL();
 }
 
 int main() {
