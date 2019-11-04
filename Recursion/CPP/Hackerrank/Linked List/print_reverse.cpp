@@ -19,5 +19,4 @@ int main() {
     helper.addNode(30);
     helper.addNode(40);
     printReverse(helper.head);
-
 }
