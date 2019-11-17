@@ -31,12 +31,14 @@ class Stack {
             cout << "STACK OVERFLOW ERROR" << endl;
         }
     }
-    void pop() {
+    int pop() {
         if (!isEmpty()) {
-            cout << "Element Poped : " << arr[tos--] << endl;
+            cout << "Element Poped : " << arr[tos] << endl;
+            return tos--;
         } else
         {
             cout << "STACK UNDERFLOW ERROR" << endl;
+            return -100;
         }
     }
 };
@@ -45,6 +47,7 @@ int main() {
     Stack stack;
     cout << stack.isEmpty() << endl;
     cout << stack.size() << endl;
+    stack.pop();
     stack.push(1);
     stack.push(2);
     stack.push(3);
