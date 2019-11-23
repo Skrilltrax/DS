@@ -75,4 +75,8 @@ int main() {
     stack.pop();
     cout << stack.size() << endl;
     cout << stack.top() << endl;
+    cout << stack.memAllocated() << endl;
+    stack.push(9);
+    stack.push(10);
+    cout << stack.memAllocated() << endl;
 }
