@@ -2,14 +2,15 @@
 #include <iostream>
 using namespace std;
 
+template <typename T>
 class Stack {
-    int *arr;
+    T *arr;
     int currentSize;
     int tos;
     public:
     Stack() : tos(-1) {
         currentSize = 4;
-        arr = new int[4];
+        arr = new T[4];
         cout << "Stack Created" << endl;
     }
     int memAllocated() {
@@ -21,32 +22,35 @@ class Stack {
     bool isEmpty() {
         return (tos == -1) ? true : false;
     }
-    int top() {
+    T top() {
         if (!isEmpty()) {
             return arr[tos];
         }
-        return tos;
+        else {
+            cout << "STACK EMPTY" << endl;
+            return NULL;
+        };
     }
-    void push(int data) {
+    void push(T data) {
         if (size() == currentSize) {
             increaseSize();
         }
         arr[++tos] = data;
         cout << "Element Pushed : " << data << endl;
     }
-    int pop() {
+    T pop() {
         if (!isEmpty()) {
             cout << "Element Poped : " << arr[tos] << endl;
-            return tos--;
+            return arr[tos--];
         } else
         {
             cout << "STACK UNDERFLOW ERROR" << endl;
-            return -100;
+            return NULL;
         }
     }
     void increaseSize() {
         cout << "Log : Size Increased" << endl;
-        int *newArr = new int[2*currentSize];
+        T *newArr = new T[2*currentSize];
         for (int i = 0; i < currentSize; i++) {
             newArr[i] = arr[i]; 
         }
@@ -57,18 +61,18 @@ class Stack {
 };
 
 int main() {
-    Stack stack;
+    Stack<char> stack;
     cout << stack.isEmpty() << endl;
     cout << stack.size() << endl;
     stack.pop();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    stack.push(5);
-    stack.push(6);
-    stack.push(7);
-    stack.push(8);
+    stack.push('a');
+    stack.push('b');
+    stack.push('c');
+    stack.push('d');
+    stack.push('e');
+    stack.push('f');
+    stack.push('g');
+    stack.push('h');
     cout << stack.isEmpty() << endl;
     cout << stack.size() << endl;
     cout << stack.top() << endl;
@@ -76,7 +80,7 @@ int main() {
     cout << stack.size() << endl;
     cout << stack.top() << endl;
     cout << stack.memAllocated() << endl;
-    stack.push(9);
-    stack.push(10);
+    stack.push('i');
+    stack.push('j');
     cout << stack.memAllocated() << endl;
 }
