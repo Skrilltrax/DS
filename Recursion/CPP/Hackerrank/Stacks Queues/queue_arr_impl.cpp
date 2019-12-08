@@ -1,9 +1,9 @@
 #include <iostream>
-#include "QueueDyn.cpp"
+#include "QueueLL.cpp"
 using namespace std;
 
 int main() {
-    Queue<int> queue1;
+    QueueLL<int> queue1;
 
     queue1.enqueue(1);
     cout << "REAR : " << queue1.getRear() << endl; 
