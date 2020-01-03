@@ -13,3 +13,8 @@ clear
 echo
 read -p "Press [ENTER] to continue"
 rm -f ./$filename
+read -p "Clear ? [Y/N] " -n1 ans
+if [ "$ans" == 'y' ]
+then
+    clear
+fi
