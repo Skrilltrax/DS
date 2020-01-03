@@ -11,4 +11,10 @@ class TreeNode {
     TreeNode (T data) {
         this -> data = data;
     }
+
+    ~TreeNode() {
+        for (auto child: children) {
+            delete child;
+        }
+    }
 };

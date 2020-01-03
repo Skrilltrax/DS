@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "TreeNode.hpp"
+#include "Tree.hpp"
 using namespace std;
 
 void printTree(TreeNode<int> *root) {
@@ -22,9 +22,13 @@ void printTree(TreeNode<int> *root) {
 
 int main () {
 
-    TreeNode<int> *root = new TreeNode<int>(10);
-    root -> children.push_back(new TreeNode<int>(20));
-    root -> children.push_back(new TreeNode<int>(30));
-    root -> children.push_back(new TreeNode<int>(40));
-    printTree(root);
+    // TreeNode<int> *root = new TreeNode<int>(10);
+    // root -> children.push_back(new TreeNode<int>(20));
+    // root -> children.push_back(new TreeNode<int>(30));
+    // root -> children.push_back(new TreeNode<int>(40));
+    
+    Tree<int> treeHelper;
+    treeHelper.createTree();
+    treeHelper.printTree();
+    // printTree(treeHelper.getTree());
 }
