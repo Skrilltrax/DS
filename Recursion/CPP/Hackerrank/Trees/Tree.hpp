@@ -7,7 +7,8 @@ class Tree {
     
     TreeNode<T>* tree;
 
-    TreeNode<T>* createNodes();
+    TreeNode<T>* createNodesDF();
+    TreeNode<T>* createNodesBF();
     void printTreeBF(TreeNode<T>* tree);
 
     public:
@@ -16,18 +17,21 @@ class Tree {
         return tree;
     }
 
-    void createTree() {
-        tree = createNodes();
+    void createTreeDF() {
+        tree = createNodesDF();
+    }
+
+    void createTreeBF() {
+        tree = createNodesBF();
     }
 
     void printTree() {
         printTreeBF(tree);
     }
-    
 };
 
 template <typename T>
-TreeNode<T>* Tree<T>::createNodes() {
+TreeNode<T>* Tree<T>::createNodesDF() {
     int val, nodes;
     cout << "Enter data : ";
     cin >> val;
@@ -35,8 +39,36 @@ TreeNode<T>* Tree<T>::createNodes() {
     cin >> nodes;
     TreeNode<T>* newTree = new TreeNode<T>(val);
     for (int i = 0; i < nodes; i++) {
-        TreeNode<T>* child = createNodes();
+        TreeNode<T>* child = createNodesDF();
         newTree -> children.push_back(child);
+    }
+    return newTree;
+}
+
+template <typename T>
+TreeNode<T>* Tree<T>::createNodesBF() {
+    int val, nodes, num;
+    cout << "Enter data : ";
+    cin >> val;
+    TreeNode<T>* newTree = new TreeNode<T>(val);
+
+    queue<TreeNode<T>*> pendingNodes;
+    pendingNodes.push(newTree);
+
+    while (pendingNodes.size() != 0)
+    {
+        TreeNode<int>* front = pendingNodes.front();
+        pendingNodes.pop();
+        cout << "Enter no of children of " << front -> data << " : ";
+        cin >> num;
+        for (int i = 0; i < num; i++) {
+            int childData;
+            cout << "Enter child " << i << " of " << front -> data << " : ";
+            cin >> childData;
+            TreeNode<T>* child = new TreeNode<T>(childData);
+            front->children.push_back(child);
+            pendingNodes.push(child);
+        }
     }
     return newTree;
 }
