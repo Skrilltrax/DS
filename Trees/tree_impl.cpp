@@ -26,9 +26,9 @@ int main () {
     // root -> children.push_back(new TreeNode<int>(20));
     // root -> children.push_back(new TreeNode<int>(30));
     // root -> children.push_back(new TreeNode<int>(40));
+    // printTree(treeHelper.getTree());
     
     Tree<int> treeHelper;
-    treeHelper.createTree();
+    treeHelper.createTreeBF();
     treeHelper.printTree();
-    // printTree(treeHelper.getTree());
 }
