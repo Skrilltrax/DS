@@ -13,7 +13,6 @@ int calculateHeight(TreeNode<int>* root) {
             max = heights[i];
         }
     }
-
     if (max == INT_MIN) {
         return 1;
     }
