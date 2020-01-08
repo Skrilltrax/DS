@@ -5,12 +5,11 @@ int calculateHeight(TreeNode<int>* root) {
     if (root == NULL) {
         return 0;
     }
-    vector<int> heights;
     int max = INT_MIN;
     for (int i = 0; i < root -> children.size(); i++) {
-        heights.push_back(calculateHeight(root -> children[i]));
-        if (max < heights[i]) {
-            max = heights[i];
+        int height = calculateHeight(root -> children[i]);
+        if (max < height) {
+            max = height;
         }
     }
     if (max == INT_MIN) {
