@@ -18,7 +18,7 @@ public static int size(Node node) {
     if (node == null) {
         return 0;
     }
-    return size(node.left), size(node.right) + 1;
+    return size(node.left) + size(node.right) + 1;
 }
 ```
 
@@ -78,7 +78,7 @@ public static ArrayList<Node> rootToNodePath(Node node, int data) {
 public static ArrayList<Node> rootToNodePath(Node node, int data) {
 
     if (node == null) {
-        return new ArrayList<>();
+        return null;
     }
     if (node.data == data) {
         ArrayList<Node> ans = new ArrayList<>();
@@ -125,7 +125,7 @@ bool rootToNodePath(Node *node, int data, vector<Node*> &path) {
 ## LCA: Lowest Common Ancestor
 
 [30 20 10]  
-[20 10]
+[&nbsp; &nbsp; &nbsp;20 10]
 
 If mismatch occurs or one arraylist finishes, LCA will be the last matching node.
 
