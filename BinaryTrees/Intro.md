@@ -1,6 +1,6 @@
 # Binary Trees
 
-Constructor chaining -> Having more than 1 constructor  
+Constructor chaining -> Calling one constructor from another constructor  
 
 ## Tree Creation
 
@@ -54,10 +54,40 @@ class Node {
 }  
 ```
 
-### Tree Traversal
+## Tree Traversal
+
+### Inorder
 
 ![Inorder](./res/inorder.png)
 
+### Preorder
+
 ![Preorder](./res/preorder.png)
 
+### Postorder
+
 ![Postorder](./res/postorder.png)
+
+### Levelorder
+
+#### Using single queue and null
+
+[10 null]
+
+[null {Children of 10} ]
+
+[20 30 null]
+
+[30 null {Children of 20}]
+
+#### Using single queue and checking size
+
+```Java
+public static void levelOrder(Node node) {
+    LinkedList queue = new LinkedList();
+    queue.addLast(node.data);
+    while(queue.size() != 0) {
+
+    }
+}
+```

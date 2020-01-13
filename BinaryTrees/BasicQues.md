@@ -150,6 +150,8 @@ void getLCA() {
 
 ## Diameter of a tree
 
+[Diameter](Codes/Java/BinaryTrees/src/app/questions/Diameter.java)
+
 ## Check BST
 
 Check if Inorder Traversal is in increasing order.

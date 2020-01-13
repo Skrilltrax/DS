@@ -1,8 +1,8 @@
 package app;
 
-import java.util.ArrayList;
-
-import app.questions.LowestCommonAncestor;
+import app.questions.AllSolutions;
+import app.questions.KFar;
+import app.questions.AllSolutions.Solutions;
 import app.utils.*;
 
 public class App {
@@ -17,6 +17,10 @@ public class App {
         // for (Node node : path) {
             // System.out.println(node.data);
         // }
-        System.out.println(LowestCommonAncestor.printLCA(root, 100, 20));
+        // System.out.println(LowestCommonAncestor.printLCA(root, 100, 20));
+        // KFar.findBad(root, 60, 3);
+        Solutions sol = new Solutions();
+        AllSolutions.solve(root, 0, 60, sol);
+        System.out.println(sol.successor.data);
     }
 }
