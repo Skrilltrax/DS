@@ -4,9 +4,9 @@ Constructor chaining -> Calling one constructor from another constructor
 
 ## Tree Creation
 
-### Java  
+### Java
 
-```Java
+```java
 public static class Node {
     int data;  
     Node left = null;
@@ -62,7 +62,7 @@ class Node {
 
 ### Preorder
 
-![Preorder](./res/preorder.png)
+![Preorder](./res/preorder.png "Preorder")
 
 ### Postorder
 
@@ -82,7 +82,7 @@ class Node {
 
 #### Using single queue and checking size
 
-```Java
+```java
 public static void levelOrder(Node node) {
     LinkedList queue = new LinkedList();
     queue.addLast(node.data);

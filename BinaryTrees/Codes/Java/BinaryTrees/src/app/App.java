@@ -18,9 +18,9 @@ public class App {
             // System.out.println(node.data);
         // }
         // System.out.println(LowestCommonAncestor.printLCA(root, 100, 20));
-        // KFar.findBad(root, 60, 3);
-        Solutions sol = new Solutions();
-        AllSolutions.solve(root, 0, 60, sol);
-        System.out.println(sol.successor.data);
+        KFar.findBest(root, 60, 1);
+        // Solutions sol = new Solutions();
+        // AllSolutions.solve(root, 0, 60, sol);
+        // System.out.println(sol.successor.data);
     }
 }

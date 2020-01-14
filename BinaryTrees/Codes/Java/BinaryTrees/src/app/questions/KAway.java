@@ -12,6 +12,9 @@ import app.Node;
 public class KAway {
 
     public static void find(Node node, int distance, Node rnode) {
+        if (distance < 0) {
+            return;
+        }
         if (node == null) {
             return;
         }

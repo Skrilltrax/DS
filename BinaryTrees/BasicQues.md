@@ -124,9 +124,10 @@ bool rootToNodePath(Node *node, int data, vector<Node*> &path) {
 
 ## LCA: Lowest Common Ancestor
 
+<pre>
 [30 20 10]  
-[&nbsp; &nbsp; &nbsp;20 10]
-
+[   20 10]
+</pre>
 If mismatch occurs or one arraylist finishes, LCA will be the last matching node.
 
 ```Java

@@ -5,7 +5,7 @@ import app.Node;
 public class BinaryTreeUtils {
 
     private static int index = 0;
-    
+
     private static Node createNode(int[] nodes) {
         if (nodes[index] == -1 || index == nodes.length) {
             index++;
