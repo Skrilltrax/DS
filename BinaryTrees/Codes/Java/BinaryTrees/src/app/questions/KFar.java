@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 public class KFar {
 
+    /**
+     * 
+     */
+
     public static int findBest(Node node, int data, int distance) {
         if (node == null) {
             return -1;
