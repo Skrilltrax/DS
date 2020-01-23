@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <projectDescription>
-  <name>Java</name>
+  <name>BinaryTrees</name>
   <comment/>
-  <projects/>
+  <projects>&#xD;
+    </projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.jdt.core.javabuilder</name>
-      <arguments/>
+      <arguments>&#xD;
+            </arguments>
     </buildCommand>
   </buildSpec>
   <natures>
