@@ -81,13 +81,3 @@ class Node {
 [30 null {Children of 20}]
 
 #### Using single queue and checking size
-
-```java
-public static void levelOrder(Node node) {
-    LinkedList queue = new LinkedList();
-    queue.addLast(node.data);
-    while(queue.size() != 0) {
-
-    }
-}
-```
