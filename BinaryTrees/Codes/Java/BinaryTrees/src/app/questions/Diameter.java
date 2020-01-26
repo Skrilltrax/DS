@@ -6,8 +6,8 @@ import app.utils.*;
 public class Diameter {
 
     /**
-     * * To get diameter we need to get diameter of left 
-     * * vs diameter of right vs the total distance of left subtree + right subtree +1 (for current node).
+     * * To get diameter we need to get diameter of left vs diameter of right vs the total distance
+     * * of left subtree + right subtree +1 (for current node).
      **/
 
     private static int diameter = 0;
@@ -38,9 +38,7 @@ public class Diameter {
 
         int[] result = new int[2];
 
-        // * Don't calculate height from scratch, we know height of each tree = 1 + height of subtree
-        // int heightLeft = BinaryTreeUtils.getHeight(node.left);
-        //int heightRight = BinaryTreeUtils.getHeight(node.right);
+        // * Don't calculate height from scratch, height of each tree = 1 + height of subtree
 
         result[0] = Math.max(Math.max(left[0], right[0]), left[1] + right[1] + 1);
         result[1] = Math.max(left[1], right[1]) + 1;
@@ -57,7 +55,7 @@ public class Diameter {
         int right = getDiameterBest(node.right);
 
         diameter = Math.max(diameter, left + right + 1);
-        
+
         return Math.max(left, right) + 1;
     }
 
@@ -65,15 +63,19 @@ public class Diameter {
         diameter = 0;
         int result = -1;
         int[] resultArr = new int[2];
-        switch(method) {
-            case 1: result = getDiameterBad(node);
+        switch (method) {
+            case 1:
+                result = getDiameterBad(node);
                 break;
-            case 2: resultArr = getDiameterOkay(node);
-                    result = resultArr[0];
+            case 2:
+                resultArr = getDiameterOkay(node);
+                result = resultArr[0];
                 break;
-            case 3: result = getDiameterBest(node);
+            case 3:
+                result = getDiameterBest(node);
                 break;
-            default: System.out.println("There are only 3 choices");
+            default:
+                System.out.println("There are only 3 choices");
         }
         return result;
     }

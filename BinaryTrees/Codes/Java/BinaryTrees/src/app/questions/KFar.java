@@ -7,7 +7,12 @@ import java.util.ArrayList;
 public class KFar {
 
     /**
+     * @param node     the root node of tree
+     * @param data     the node from which K far nodes are to be found
+     * @param distance the distance at which K nodes are away
+     * @return distance to be calculated from parent node
      * 
+     *         * Uses O(n) time and O(1) space
      */
 
     public static int findBest(Node node, int data, int distance) {
@@ -44,8 +49,9 @@ public class KFar {
     /**
      * @param node     the root node of tree
      * @param data     the node from which K far nodes are to be found
-     * @param distance the distance at which K nodes are * Uses O(n) time and O(1)
-     *                 space
+     * @param distance the distance at which K nodes are
+     * 
+     *                 ? Uses O(n) time and O(1) space
      */
 
     public static int findGood(Node node, int data, int distance) {
@@ -79,8 +85,9 @@ public class KFar {
     /**
      * @param node     the root node of tree
      * @param data     the node from which K far nodes are to be found
-     * @param distance the distance at which K nodes are away ! Uses O(n) time and
-     *                 space
+     * @param distance the distance at which K nodes are away
+     * 
+     *                 ! Uses O(n) time and space
      */
 
     public static void findBad(Node node, int data, int distance) {

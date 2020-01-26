@@ -1,15 +1,17 @@
-package app.questions;
+package app.questions.bst;
 
 import app.Node;
 
 public class AllSolutions {
 
     public static class Solutions {
+        boolean find = false;
+        
         public int height = 0;
         public int size = 0;
-        boolean find = false;
         public int ciel = Integer.MAX_VALUE; // (int) 1e8
         public int floor = Integer.MIN_VALUE; // (int) -1e8
+        
         public Node previous = null;
         public Node predecessor = null;
         public Node successor = null;
@@ -40,8 +42,7 @@ public class AllSolutions {
         }
 
         sol.previous = node;
-        solve(node.left, level+1, data, sol);
-        solve(node.right, level+1, data, sol);
+        solve(node.left, level + 1, data, sol);
+        solve(node.right, level + 1, data, sol);
     }
-
 }

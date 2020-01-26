@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import app.Node;
 
 public class PathUtils {
+    
     // ! Very Bad method creates Array List on each call
     private static ArrayList<Node> getPathVeryBad(Node node, int data) {
         ArrayList<Node> ans = new ArrayList<>();

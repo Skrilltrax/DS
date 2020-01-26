@@ -58,15 +58,15 @@ class Node {
 
 ### Inorder
 
-![Inorder](./res/inorder.png)
+![Inorder](../res/inorder.png)
 
 ### Preorder
 
-![Preorder](./res/preorder.png "Preorder")
+![Preorder](../res/preorder.png "Preorder")
 
 ### Postorder
 
-![Postorder](./res/postorder.png)
+![Postorder](../res/postorder.png)
 
 ### Levelorder
 
