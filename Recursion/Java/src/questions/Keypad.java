@@ -14,6 +14,7 @@ public class Keypad {
      * @param ans  Final answer to be printed at the end.
      * @return Total number of possible outcomes
      */
+    
     public static int printKeys(String nums, String ans) {
         if (nums.length() == 0) {
             System.out.println(ans);
