@@ -1,5 +1,6 @@
 package app.questions.bst;
 
+import app.AVLNode;
 import app.Node;
 import app.utils.BinaryTreeUtils;
 
@@ -75,6 +76,22 @@ public class BSTUtils {
             root.right = removeNode(root.right, target);
         }
         return root;
+    }
+
+    public static void printTree(AVLNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " : ");
+        if (node.left != null) {
+            System.out.print(" L" + node.left.data);
+        }
+        if (node.right != null) {
+            System.out.print(" R" + node.right.data);
+        }
+        System.out.println();
+        printTree(node.left);
+        printTree(node.right);
     }
 
     public static void main(String[] args) {

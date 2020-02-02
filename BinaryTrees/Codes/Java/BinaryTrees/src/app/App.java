@@ -1,6 +1,5 @@
 package app;
 
-import app.questions.*;
 import app.utils.*;
 
 public class App {
@@ -8,7 +7,7 @@ public class App {
         int[] nodes = { 10, 20, 30, -1, -1, 40, -1, -1, 50, 60, 80, -1, -1, -1, 70, 90, -1, 100, -1, -1, -1 };
         // int[] nodes = { 20, 10, -1, -1, 30, -1, -1};
         Node root = BinaryTreeUtils.createTree(nodes);
-        // BinaryTreeUtils.printTree(root);
+        BinaryTreeUtils.printTree(root);
         // System.out.println(BinaryTreeUtils.getHeight(root));
         // System.out.println(BinaryTreeUtils.getSize(root));
         // System.out.println(BinaryTreeUtils.find(root, 101));

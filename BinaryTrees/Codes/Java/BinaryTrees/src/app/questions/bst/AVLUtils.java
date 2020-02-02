@@ -8,6 +8,8 @@ public class AVLUtils {
         AVLNode leftNode = node.left;
         node.left = leftNode.right;
         leftNode.right = node;
+        updateHeightAndBalance(node);
+        updateHeightAndBalance(leftNode);
         return leftNode;
     }
 
@@ -15,10 +17,26 @@ public class AVLUtils {
         AVLNode rightNode = node.right;
         node.right = rightNode.left;
         rightNode.left = node;
+        updateHeightAndBalance(node);
+        updateHeightAndBalance(rightNode);
         return rightNode;
     }
 
+    public static void updateHeightAndBalance(AVLNode node) {
+        int leftHeight = -1;
+        int rightHeight = -1;
+
+        if (node.left != null)
+            leftHeight = node.left.height;
+        if (node.right != null)
+            rightHeight = node.right.height;
+
+        node.height = Math.max(leftHeight, rightHeight) + 1;
+        node.balance = leftHeight - rightHeight;
+    }
+
     public static AVLNode rotateSubTree(AVLNode node) {
+        updateHeightAndBalance(node);
         // * LL or LR Rotation
         if (node.balance == 2) {
             if (node.left.balance == 1) {
@@ -43,18 +61,6 @@ public class AVLUtils {
         return node;
     }
 
-    public static void updateHeightAndBalance(AVLNode node) {
-        int leftHeight = -1;
-        int rightHeight = -1;
-
-        if (node.left != null)
-            leftHeight = node.left.height;
-        if (node.right != null)
-            rightHeight = node.right.height;
-
-        node.height = Math.max(leftHeight, rightHeight) + 1;
-        node.balance = leftHeight - rightHeight;
-    }
 
     public static AVLNode createFromSortedArray(int[] arr, int si, int ei) {
         if (si > ei) {
@@ -66,7 +72,7 @@ public class AVLUtils {
 
         node.left = createFromSortedArray(arr, si, mid - 1);
         node.right = createFromSortedArray(arr, mid + 1, ei);
-
+        updateHeightAndBalance(node);
         return node;
     }
 
@@ -80,6 +86,7 @@ public class AVLUtils {
         } else {
             node.right = addNode(node.right, data);
         }
+        updateHeightAndBalance(node);
         return node;
     }
 
@@ -102,6 +109,7 @@ public class AVLUtils {
             int maxNodeLeft = getMaxNode(root.left);
             root.data = maxNodeLeft;
             root.left = removeNode(root.left, maxNodeLeft);
+            updateHeightAndBalance(root);
             return root;
         }
 
@@ -125,6 +133,7 @@ public class AVLUtils {
         } else {
             root.right = removeNode(root.right, target);
         }
+        updateHeightAndBalance(root);
         return root;
     }
 }
