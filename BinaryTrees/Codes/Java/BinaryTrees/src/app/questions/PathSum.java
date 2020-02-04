@@ -2,6 +2,9 @@ package app.questions;
 
 import app.Node;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import app.utils.BinaryTreeUtils;
 
 public class PathSum {
 
@@ -46,7 +49,72 @@ public class PathSum {
         return ans;
     }
 
-    public static void main(String[] args) {
 
+    // * Always make sure map contains (o -> 1) before passing to recursion
+    public static int pathSumIII(Node node, int prefixSum, int target, HashMap<Integer, Integer> map) {
+        if (node == null) {
+            return 0;
+        }
+
+        prefixSum += node.data;
+
+        int count = map.getOrDefault(prefixSum - target, 0);
+        
+        map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
+
+        count += pathSumIII(node.left, prefixSum, target, map);
+        count += pathSumIII(node.right, prefixSum, target, map);
+
+        if (map.get(prefixSum) == 1) {
+            map.remove(prefixSum);
+        } else {
+            map.put(prefixSum, map.get(prefixSum) - 1);
+        }
+
+        return count;
+    }
+
+    static int maxLeafSum = Integer.MIN_VALUE;
+
+    // * Max sum b/w 2 leaves
+    public static int leafToLeafSum(Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftNodeToLeaf = leafToLeafSum(node.left);
+        int rightNodeToLeaf = leafToLeafSum(node.right);
+
+        if (node.left != null && node.right != null) {
+            maxLeafSum = Math.max(maxLeafSum, leftNodeToLeaf + rightNodeToLeaf + node.data);
+            return Math.max(leftNodeToLeaf, rightNodeToLeaf) + node.data;
+        }
+
+        return ((node.left == null) ? rightNodeToLeaf : leftNodeToLeaf) + node.data;
+    }
+
+    static int maxPathSum = Integer.MIN_VALUE;
+
+    public static int nodeToNodeSum(Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftNodeToNode = nodeToNodeSum(node.left);
+        int rightNodeToNode = nodeToNodeSum(node.right);
+
+        int maxLeft = Math.max(leftNodeToNode, leftNodeToNode + node.data);
+        int maxRight = Math.max(rightNodeToNode, rightNodeToNode + node.data);
+        int maxLR = Math.max(maxLeft, maxRight);
+        int max = Math.max(maxLR, leftNodeToNode + rightNodeToNode + node.data);
+        maxPathSum = max;
+        
+        return maxLR;
+    }
+
+    public static void main(String[] args) {
+        int[] nodes = { 10, 20, 30, -1, -1, 40, -1, -1, 50, 60, 80, -1, -1, -1, 70, 90, -1, 100, -1, -1, -1 };
+        Node root = BinaryTreeUtils.createTree(nodes);
+        BinaryTreeUtils.printTree(root);
     }
 }

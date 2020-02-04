@@ -33,7 +33,7 @@ public class TreeSums {
         do {
             System.out.print(node.data + " ");
             node = node.left;
-        } while (node.left != null) 
+        } while (node.left != null); 
         
         // while (node.right != null) {
         //     System.out.println(node.data);

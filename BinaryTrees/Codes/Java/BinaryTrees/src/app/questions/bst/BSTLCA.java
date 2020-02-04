@@ -1,9 +1,6 @@
 package app.questions.bst;
 
-import java.util.Random;
-
 import app.AVLNode;
-import app.utils.BinaryTreeUtils;
 
 public class BSTLCA {
 
