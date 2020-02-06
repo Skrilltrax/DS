@@ -1,5 +1,7 @@
 package questions;
 
+import java.util.Arrays;
+
 public class Coins {
 
     public static int coinCombination(int[] coins, int index, int target, String ans) {
@@ -73,7 +75,7 @@ public class Coins {
 
     public static void main(String[] args) {
         int[] coins = { 2, 3, 5, 7 };
-        // System.out.println(Arrays.asList(arr));
+        System.out.println(Arrays.asList(1, 2, 3, 4, 5));
         // ArrayList<Integer> coins = Arrays.asList(0, 2, 3, 5, 7);
         // coinInfiniteCombination(coins, 0, 10, "");
         // coinCombinationAlt(coins, 0, 10, "");
