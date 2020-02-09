@@ -14,7 +14,7 @@ public class Sudoku {
 
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-
+                
                 if (board[i][j] != 0) {
                     int mask = 1 << board[i][j];
                     if ((row[i] & mask) == 0 && (col[j] & mask) == 0 && (mat[i / 3][j / 3] & mask) == 0) {
@@ -27,7 +27,7 @@ public class Sudoku {
                 }
             }
         }
-
+x
     }
 
     public static int fill(int boxNo) {
@@ -44,6 +44,7 @@ public class Sudoku {
         int count = 0;
         int i = boxNo / 9;
         int j = boxNo % 9;
+        
         if (board[i][j] == 0) {
             for (int num = 1; num <= 9; num++) {
                 int mask = 1 << num;
