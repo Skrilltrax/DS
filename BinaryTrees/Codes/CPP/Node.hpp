@@ -1,3 +1,4 @@
+#include <climits>
 class Node {
     int data;
     Node *left;
@@ -5,7 +6,7 @@ class Node {
     public:
 
     Node() {
-        data = INT32_MIN;
+        data = INT_MIN;
         left = nullptr;
         right = nullptr;
     }
