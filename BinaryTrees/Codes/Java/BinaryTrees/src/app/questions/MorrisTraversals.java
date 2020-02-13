@@ -20,7 +20,6 @@ public class MorrisTraversals {
                 }
             }
 
-
             if (curr != null && curr.left != null) {
                 nextLeft = curr.left;
 
@@ -52,7 +51,6 @@ public class MorrisTraversals {
                 flag = false;
             }
 
-            
             if (curr != null && curr.left != null) {
                 nextLeft = curr.left;
                 while (nextLeft.right != null && nextLeft.right != curr) {

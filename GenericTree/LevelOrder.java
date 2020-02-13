@@ -25,20 +25,20 @@ public class LevelOrder {
 
     public static boolean isLeft = false;
 
-    public static void LevelOrderZigZag(GT.Node node) {
-        Queue<GT.Node> queue = new LinkedList<GT.Node>();
+    public static void LevelOrderZigZag(Node node) {
+        Queue<Node> queue = new LinkedList<Node>();
 
         queue.add(node);
         queue.add(null);
 
         while (queue.size() > 1) {
-            GT.Node n = queue.remove();
+            Node n = queue.remove();
             if (n != null)
                 System.out.print(node.data + ", ");
             else 
                 isLeft = !isLeft;
             
-            for (GT.Node node1 : n.children) {
+            for (Node node1 : n.children) {
                 queue.add(node1);
             }
 

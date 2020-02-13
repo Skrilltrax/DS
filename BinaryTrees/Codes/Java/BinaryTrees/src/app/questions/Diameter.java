@@ -6,8 +6,8 @@ import app.utils.*;
 public class Diameter {
 
     /**
-     * * To get diameter we need to get diameter of left vs diameter of right vs the total distance
-     * * of left subtree + right subtree +1 (for current node).
+     ** To get diameter we need to get diameter of left vs diameter of right vs the total distance
+     ** of left subtree + right subtree +1 (for current node).
      **/
 
     private static int diameter = 0;

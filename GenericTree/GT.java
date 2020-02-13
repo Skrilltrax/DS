@@ -208,9 +208,27 @@ class GT {
 
     }
 
+    public static Node linearize(Node node) {
+        if (node.children.size() == 0) {
+            return node;
+        }
+
+        ArrayList<Node> list = new ArrayList<>();
+
+        for (int i = 0; i < node.children.size(); i++) {
+            list.add(linearize(node.children.get(i)));
+        }
+
+        for (int i = list.size() - 1; i >= 0; i++) {
+            list.get(i - 1).children.add(node.children.get(i));
+            node.children.remove(i);
+        }
+
+        return list.get(list.size() - 1);
+    }
+
     public static void main(String[] args) {
-        int[] arr = { 10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1,
-                -1 };
+        int[] arr = { 10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1+};
 
         Node root = construct(arr);
 
@@ -243,7 +261,8 @@ class GT {
         // System.out.println(pre+" === "+succ);
 
         // LevelOrder.traverse(root);
-        RemoveLeaves.remove(root);
+        // RemoveLeaves.remove(root);
+        linearize(root);
         display(root);
     }
 }
