@@ -8,6 +8,17 @@ class Graph
     vector<vector<Edge *>> graph;
 
 public:
+    void initializeInstance(int size, bool bidirectional)
+    {
+        this->size = size;
+        this->bidirectional = bidirectional;
+        graph.resize(size);
+    }
+
+    vector<vector<Edge *>> getInstance() {
+        return graph;
+    }
+
     void createGraph(int size, bool bidirectional)
     {
         this->size = size;
