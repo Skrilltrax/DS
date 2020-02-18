@@ -27,7 +27,7 @@ public class Sudoku {
                 }
             }
         }
-x
+
     }
 
     public static int fill(int boxNo) {
@@ -65,6 +65,11 @@ x
                 }
             }
         } else {
+
+            int mask = (1 << board[i][j]);
+            row[i] |= mask;
+            col[j] |= mask;
+            mat[i/3][j/3] |= mask;
             count += fill(boxNo + 1);
         }
         return count;
