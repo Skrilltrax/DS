@@ -1,7 +1,7 @@
 mod two_sum;
+mod palindrome_number;
 
 fn main() {
-    println!("Hello, world!");
-    let answer = two_sum::two_sum(vec![2,7,11,15], 9);
+    let answer = palindrome_number::is_palindrome(0);
     println!("{:?}", answer);
 }
