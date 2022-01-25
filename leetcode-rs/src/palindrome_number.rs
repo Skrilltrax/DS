@@ -1,3 +1,17 @@
+#![allow(dead_code)]
+
+pub fn is_palindrome_string(x: i32) -> bool {
+    let x = x.to_string();
+    let forward = x.chars().into_iter();
+    let reverse = x.chars().into_iter().rev();
+
+    for (f, r) in forward.zip(reverse) {
+        if f != r { return false; }
+    }
+
+    return true;
+}
+
 pub fn is_palindrome(x: i32) -> bool {
     if x < 0 { return false; }
     if x > 10 && x % 10 == 0 { return false; }
