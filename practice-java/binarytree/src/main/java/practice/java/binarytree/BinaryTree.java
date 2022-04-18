@@ -4,18 +4,34 @@
 package practice.java.binarytree;
 
 import practice.java.binarytree.pc.Create;
-import practice.java.binarytree.pc.RootToLeafPath;
+import practice.java.binarytree.pc.Traversal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BinaryTree {
 
+
+    /*
+     *                                    ┌────────┐
+     *                                    │   50   │
+     *                                    └────────┘
+     *
+     *                 ┌────────┐                            ┌────────┐
+     *                 │   25   │                            │   75   │
+     *                 └────────┘                            └────────┘
+     *
+     *     ┌────────┐              ┌────────┐    ┌────────┐              ┌────────┐
+     *     │   12   │              │   37   │    │   62   │              │   87   │
+     *     └────────┘              └────────┘    └────────┘              └────────┘
+     *
+     *                         ┌────────┐              ┌────────┐
+     *                         │   30   │              │   70   │
+     *                         └────────┘              └────────┘
+     */
     private static ArrayList<Integer> intNodesList() {
         Integer[] nodesArr = new Integer[]{50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
-        ArrayList<Integer> nodes = new ArrayList<>(Arrays.asList(nodesArr));
-
-        return nodes;
+        return new ArrayList<>(Arrays.asList(nodesArr));
     }
 
     private static Node<Integer> createIntBinaryTree() {
@@ -25,6 +41,6 @@ public class BinaryTree {
 
     public static void run() {
         Node<Integer> root = createIntBinaryTree();
-        System.out.println(RootToLeafPath.rootToLeafPathArrayList(root, 87));
+        Traversal.postOrderTraversalIterative(root);
     }
 }
