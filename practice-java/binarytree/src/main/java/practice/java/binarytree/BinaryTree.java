@@ -4,7 +4,7 @@
 package practice.java.binarytree;
 
 import practice.java.binarytree.pc.Create;
-import practice.java.binarytree.pc.Display;
+import practice.java.binarytree.pc.RootToLeafPath;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +25,6 @@ public class BinaryTree {
 
     public static void run() {
         Node<Integer> root = createIntBinaryTree();
-        System.out.println("BinaryTree");
-        Display.display(root);
+        System.out.println(RootToLeafPath.rootToLeafPathArrayList(root, 87));
     }
 }
