@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "practice-java"
-include("app", "binarytree","list", "utilities")
+include("app", "binarytree", "hashing","list", "utilities")

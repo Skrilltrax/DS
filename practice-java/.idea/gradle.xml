@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/binarytree" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/hashing" />
             <option value="$PROJECT_DIR$/list" />
             <option value="$PROJECT_DIR$/utilities" />
           </set>
