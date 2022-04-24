@@ -5,6 +5,7 @@ package practice.java.binarytree;
 
 import practice.java.binarytree.pc.Create;
 import practice.java.binarytree.pc.LevelOrderTraversal;
+import practice.java.binarytree.pc.NodeToRootPath;
 import practice.java.binarytree.pc.Traversal;
 
 import java.util.ArrayList;
@@ -41,6 +42,6 @@ public class BinaryTree {
 
     public static void run() {
         Node<Integer> root = createIntBinaryTree();
-        LevelOrderTraversal.levelOrderTraversal(root);
+        System.out.println(NodeToRootPath.findNodeToRootPath(root, 70));
     }
 }
