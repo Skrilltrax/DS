@@ -6,8 +6,9 @@ mod longest_common_prefix;
 mod roman_to_int;
 mod valid_parentheses;
 mod merge_two_sorted_lists;
+mod arrays;
 
 fn main() {
-    let answer = valid_parentheses::is_valid("{[()]}".to_string());
+    let answer = arrays::pascal_triangle::generate(5);
     println!("{:?}", answer);
 }

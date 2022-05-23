@@ -1,3 +1,4 @@
+/*
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -37,3 +38,4 @@ pub fn merge(first: Option<Box<ListNode>>, second: Option<Box<ListNode>>, prev: 
 
     }
 }
+*/
