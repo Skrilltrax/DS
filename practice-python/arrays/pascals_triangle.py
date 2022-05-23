@@ -5,6 +5,7 @@ from typing import List
 class Solution:
     def generate(self, num_rows: int) -> List[List[int]]:
         pascal_list: List[List[int]] = []
+
         for i in range(num_rows):
             if i == 0:
                 row = self.create_row(i, [])
@@ -17,7 +18,7 @@ class Solution:
 
     # noinspection PyListCreation
     def create_row(self, row_number: int, previous_row: List[int]):
-        if row_number == 1:
+        if row_number == 0:
             return [1]
 
         new_row: List[int] = []
@@ -32,3 +33,5 @@ class Solution:
 
         # Append the ending 1
         new_row.append(1)
+        
+        return new_row
